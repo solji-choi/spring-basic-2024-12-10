@@ -1,7 +1,7 @@
 package com.ll.basic.domain.home.home.controller;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -100,14 +100,15 @@ public class HomeController {
     @GetMapping("/article")
     @ResponseBody
     public Article getArticle() {
-        return new Article(1, "제목", "내용");
+        return new Article("제목", "내용");
     }
 }
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 class Article {
     private long id;
-    private String title;
-    private String body;
+    private final String title;
+    private final String body;
+    private boolean published;
 }
