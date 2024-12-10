@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 // @Controller 어노테이션을 붙여주면 스프링부트가 이 클래스를 컨트롤러로 인식하게 된다.
 @Controller
@@ -130,18 +131,17 @@ public class HomeController {
     public String getArticlesDotHtml() {
         Article article1 = Article.builder().id(1).body("내용1").title("제목1").build();
         Article article2 = Article.builder().id(2).body("내용2").title("제목2").build();
+        Article article3 = Article.builder().id(3).body("내용3").title("제목3").build();
+        Article article4 = Article.builder().id(4).body("내용4").title("제목4").build();
 
-        return """
-                <ul>
-                    <li>%d번 / %s</li>
-                    <li>%d번 / %s</li>
-                </ul>
-                """.formatted(
-                article1.getId(),
-                article1.getTitle(),
-                article2.getId(),
-                article2.getTitle()
-        );
+        List<Article> articles = List.of(article1, article2, article3, article4);
+
+        String lis = articles
+                .stream()
+                .map(article -> "<li>%d번 / %s</li>".formatted(article.getId(), article.getTitle()))
+                .collect(Collectors.joining("\n"));
+
+        return "<ul>\n" + lis + "\n</ul>";
     }
 }
 
