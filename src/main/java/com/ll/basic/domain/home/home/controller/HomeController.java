@@ -124,6 +124,20 @@ public class HomeController {
                 "article2", Article.builder().body("내용2").title("제목2").build()
         );
     }
+
+    @GetMapping("/articleList.html")
+    @ResponseBody
+    public String getArticlesDotHtml() {
+        Article article1 = Article.builder().id(1).body("내용1").title("제목1").build(),
+        Article article2 = Article.builder().id(2).body("내용2").title("제목2").build()
+
+        return """
+                <ul>
+                    <li>1번 / 제목1</li>
+                    <li>2번 / 제목2</li>
+                </ul>
+                """;
+    }
 }
 
 @Builder
