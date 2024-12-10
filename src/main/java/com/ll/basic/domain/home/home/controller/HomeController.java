@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+import java.util.Map;
+
 // @Controller 어노테이션을 붙여주면 스프링부트가 이 클래스를 컨트롤러로 인식하게 된다.
 @Controller
 public class HomeController {
@@ -32,4 +35,64 @@ public class HomeController {
     public int getAgeAndUp() {
         return age++;
     }
+
+    @GetMapping("/boolean")
+    @ResponseBody
+    public boolean getBoolean() {
+        return true;
+    }
+
+    @GetMapping("/byte")
+    @ResponseBody
+    public byte getByte() {
+        return 127;
+    }
+
+    @GetMapping("/short")
+    @ResponseBody
+    public short getShort() {
+        return 32000;
+    }
+
+    @GetMapping("/long")
+    @ResponseBody
+    public long getLong() {
+        return 100_000_000_000_000L;
+    }
+
+    @GetMapping("/char")
+    @ResponseBody
+    public char getChar() {
+        return '꽑';
+    }
+
+    @GetMapping("/float")
+    @ResponseBody
+    public float getFloat() {
+        return 3.14f;
+    }
+
+    @GetMapping("/double")
+    @ResponseBody
+    public double getDouble() {
+        return 3.141592;
+    }
+
+    @GetMapping("/array")
+    @ResponseBody
+    public String[] getArray() {
+        String[] arr = {"a", "b", "c"};
+        return arr;
+    }
+    @GetMapping("/list")
+    @ResponseBody
+    public List<String> getList() {
+        return List.of("a", "b", "c");
+    }
+    @GetMapping("/map")
+    @ResponseBody
+    public Map<String, String> getMap() {
+        return Map.of("name", "Paul", "hobby", "reading");
+    }
+
 }
