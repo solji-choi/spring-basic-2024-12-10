@@ -21,10 +21,8 @@ public class WiseSayingController {
 
     @GetMapping("/wiseSayings/write")
     public WiseSaying write(
-            // ? 뒤의 content 파라미터 값이 들어온다.
-            @RequestParam(name = "content") String content,
-            // ? 뒤의 author 파라미터 값이 들어온다.
-            @RequestParam(name = "author") String author
+            String content,
+            @RequestParam(defaultValue = "무명") String author
     ) {
         return wiseSayingService.write(content, author);
     }
