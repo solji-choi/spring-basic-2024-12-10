@@ -141,7 +141,7 @@ public class HomeController {
                 .map(article -> "<li>%d번 / %s</li>".formatted(article.getId(), article.getTitle()))
                 .collect(Collectors.joining("\n"));
 
-        return "<ul>\n" + lis + "\n</ul>";
+        return "<ul style=\"font-weight:bold; color:skyblue;\">\n" + lis + "\n</ul>";
     }
 }
 
