@@ -128,8 +128,8 @@ public class HomeController {
     @GetMapping("/articleList.html")
     @ResponseBody
     public String getArticlesDotHtml() {
-        Article article1 = Article.builder().id(1).body("내용1").title("제목1").build(),
-        Article article2 = Article.builder().id(2).body("내용2").title("제목2").build()
+        Article article1 = Article.builder().id(1).body("내용1").title("제목1").build();
+        Article article2 = Article.builder().id(2).body("내용2").title("제목2").build();
 
         return """
                 <ul>
