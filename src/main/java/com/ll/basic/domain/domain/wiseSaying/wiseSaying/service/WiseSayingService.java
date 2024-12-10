@@ -4,7 +4,6 @@ import com.ll.basic.domain.domain.wiseSaying.wiseSaying.entity.WiseSaying;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -35,10 +34,19 @@ public class WiseSayingService {
         }};
     }
 
-    public List<WiseSaying> findAll () {
-        return wiseSayings
-                .stream()
-                .sorted(Comparator.comparing(WiseSaying::getId).reversed())
-                .toList();
+    public List<WiseSaying> findAll() {
+        return null;
+    }
+
+    public WiseSaying write(String content, String author) {
+        WiseSaying wiseSaying = WiseSaying
+                .builder()
+                .id(++lastId)
+                .content(content)
+                .author(author)
+                .build();
+        wiseSayings.add(wiseSaying);
+
+        return wiseSaying;
     }
 }
