@@ -107,8 +107,8 @@ public class HomeController {
 @RequiredArgsConstructor
 @Getter
 class Article {
-    private long id;
+    private final long id = 1;
     private final String title;
     private final String body;
-    private boolean published;
+    private final boolean published = true;
 }
