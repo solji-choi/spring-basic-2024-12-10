@@ -133,10 +133,15 @@ public class HomeController {
 
         return """
                 <ul>
-                    <li>1번 / 제목1</li>
-                    <li>2번 / 제목2</li>
+                    <li>%d번 / %s</li>
+                    <li>%d번 / %s</li>
                 </ul>
-                """;
+                """.formatted(
+                article1.getId(),
+                article1.getTitle(),
+                article2.getId(),
+                article2.getTitle()
+        );
     }
 }
 
