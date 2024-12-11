@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor//여기에 붙이면 모든 메소드에 적용됨
@@ -25,5 +26,12 @@ public class WiseSayingController {
             @RequestParam(defaultValue = "무명") String author
     ) {
         return wiseSayingService.write(content, author);
+    }
+
+    @GetMapping("/wiseSayings/1")
+    public WiseSaying getItem() {
+        Optional<WiseSaying> opWiseSaying = wiseSayingService.findFyId(1L);
+
+        return opWiseSaying.get();
     }
 }
