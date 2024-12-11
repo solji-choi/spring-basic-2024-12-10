@@ -4,6 +4,7 @@ import com.ll.basic.domain.domain.wiseSaying.wiseSaying.entity.WiseSaying;
 import com.ll.basic.domain.domain.wiseSaying.wiseSaying.service.WiseSayingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,9 +29,11 @@ public class WiseSayingController {
         return wiseSayingService.write(content, author);
     }
 
-    @GetMapping("/wiseSayings/1")
-    public WiseSaying getItem() {
-        Optional<WiseSaying> opWiseSaying = wiseSayingService.findFyId(1L);
+    @GetMapping("/wiseSayings/{id}")
+    public WiseSaying getItem(
+            @PathVariable long id
+    ) {
+        Optional<WiseSaying> opWiseSaying = wiseSayingService.findFyId(id);
 
         return opWiseSaying.get();
     }
