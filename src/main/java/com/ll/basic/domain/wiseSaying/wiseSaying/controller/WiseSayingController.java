@@ -1,7 +1,7 @@
 package com.ll.basic.domain.wiseSaying.wiseSaying.controller;
 
-import com.ll.basic.domain.domain.wiseSaying.wiseSaying.entity.WiseSaying;
-import com.ll.basic.domain.domain.wiseSaying.wiseSaying.service.WiseSayingService;
+import com.ll.basic.domain.wiseSaying.wiseSaying.entity.WiseSaying;
+import com.ll.basic.domain.wiseSaying.wiseSaying.service.WiseSayingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

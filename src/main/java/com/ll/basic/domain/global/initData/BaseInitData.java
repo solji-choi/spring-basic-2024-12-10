@@ -1,6 +1,6 @@
 package com.ll.basic.domain.global.initData;
 
-import com.ll.basic.domain.domain.wiseSaying.wiseSaying.service.WiseSayingService;
+import com.ll.basic.domain.wiseSaying.wiseSaying.service.WiseSayingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;

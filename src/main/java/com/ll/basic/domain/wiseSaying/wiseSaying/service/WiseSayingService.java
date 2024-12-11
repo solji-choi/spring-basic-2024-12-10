@@ -1,6 +1,6 @@
-package com.ll.basic.domain.domain.wiseSaying.wiseSaying.service;
+package com.ll.basic.domain.wiseSaying.wiseSaying.service;
 
-import com.ll.basic.domain.domain.wiseSaying.wiseSaying.entity.WiseSaying;
+import com.ll.basic.domain.wiseSaying.wiseSaying.entity.WiseSaying;
 import com.ll.basic.domain.wiseSaying.wiseSaying.repository.WiseSayingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.ll.basic.domain.wiseSaying.wiseSaying.repository;
 
-import com.ll.basic.domain.domain.wiseSaying.wiseSaying.entity.WiseSaying;
+import com.ll.basic.domain.wiseSaying.wiseSaying.entity.WiseSaying;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
