@@ -24,7 +24,7 @@ public class WiseSayingController {
     @GetMapping("/wiseSayings/write")
     public WiseSaying write(
             String content,
-            @RequestParam(defaultValue = "무명") String author
+            @RequestParam(defaultValue = "작자미상") String author
     ) {
         return wiseSayingService.write(content, author);
     }
@@ -43,5 +43,18 @@ public class WiseSayingController {
             @PathVariable long id
     ) {
         return wiseSayingService.deleteById(id);
+    }
+
+    @GetMapping("/wiseSayings/{id}/modify")
+    public WiseSaying modifyItem(
+            @PathVariable long id,
+            String content,
+            @RequestParam(defaultValue = "작자미상") String author
+    ) {
+        WiseSaying wiseSaying = wiseSayingService.findById(id).get();
+
+        wiseSayingService.modify(wiseSaying, content, author);
+
+        return wiseSaying;
     }
 }
