@@ -55,10 +55,14 @@ public class WiseSayingService {
         return wiseSaying;
     }
 
-    public Optional<WiseSaying> findFyId(long id) {
+    public Optional<WiseSaying> findById(long id) {
         return wiseSayings
                 .stream()
                 .filter(wiseSaying -> wiseSaying.getId() == id)
                 .findFirst();
+    }
+
+    public boolean deleteById(long id) {
+        return wiseSayings.removeIf(wiseSaying -> wiseSaying.getId() == id);
     }
 }
