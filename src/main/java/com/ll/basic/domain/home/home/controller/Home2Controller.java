@@ -13,10 +13,17 @@ import java.util.List;
 @RequestMapping("/home2")
 public class Home2Controller {
     private final List<Integer> ages;
+    private final List<Integer> ages2;
 
     @GetMapping("/ages")
     @ResponseBody
     public List<Integer> ages() {
         return ages;
+    }
+
+    @GetMapping("/ages2")
+    @ResponseBody
+    public List<Integer> ages2() {
+        return ages2;
     }
 }
